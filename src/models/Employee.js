@@ -10,23 +10,23 @@ employee.prototype.validateUserInput = function () {
     }
 };
 
-employee.getAllAsync = function () {
+employee.GetAll = function () {
     return knex("employees").select("*")
 }
 
-employee.getAsync = function (id) {
+employee.FindById = function (id) {
     return knex("employees").select("*").where("id", id);
 }
 
-employee.createAsync = function (employee) {
+employee.create = function (employee) {
     return knex("employees").insert(employee)
 }
 
-employee.updateAsync = function (id, employee) {
+employee.update = function (id, employee) {
     return knex("employees").where("id", id).update(employee)
 }
 
-employee.removeAsync = function (id) {
+employee.remove = function (id) {
     return knex("employees").where("id", id).del();
 }
 module.exports = employee;
